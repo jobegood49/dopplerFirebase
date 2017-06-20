@@ -1,0 +1,28 @@
+include head
+include menu
++head('./js/create.js')
+
+    body
+        +menu()
+        h1 Create User
+
+        .row
+            .column.small-4
+
+                form#userCreate
+                    .row
+                        .small-3.columns
+                            label.text-right.middle(for='middle-label') Name
+                        .small-9.columns
+                            input#nameUser(type='text',name='name' )
+                    .row
+                        .small-3.columns
+                            label.text-right.middle(for='middle-label') Age
+                        .small-9.columns
+                            input#ageUser(type='text',name='age' )
+                    .row
+                        .small-3.columns
+                            label.text-right.middle(for='middle-label') Email
+                        .small-9.columns
+                            input#emailUser(type='text',name='email')
+                    input(type='submit', value='Submit', id='submitButton')

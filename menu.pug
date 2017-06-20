@@ -1,0 +1,30 @@
+mixin menu()
+        .top-bar
+            .top-bar-title
+                span(data-responsive-toggle='responsive-menu', data-hide-for='medium')
+                    button.menu-icon.dark(type='button', data-toggle='')
+                strong firebaseDoppler
+            #responsive-menu
+                .top-bar-left
+                    ul.dropdown.menu(data-dropdown-menu='')
+                        li
+                            a(href='create.html') Create
+                            ul.menu.vertical
+                                li
+                                    a(href='#') Create
+                                li
+                                    a(href='#') List
+                                li
+                                    a(href='#') Default
+                        li
+                            a(href='index.html') Delete
+                        li
+                            a(href='index.html') Default
+                .top-bar-right
+                    ul.menu
+                        li
+                            input(type='search', placeholder='Search')
+                        li
+                            button.button(type='button') Search
+
+

@@ -1,0 +1,36 @@
+mixin head(addedScript)
+    doctype html
+    html(lang='en')
+        head
+            meta(charset='UTF-8')
+            link(rel="stylesheet", type="text/css", href="foundation.min.css")
+            link(rel="stylesheet", type="text/css", href="style.css")
+            script(src="jquery.js")
+            script(src="foundation.min.js")
+
+            title firebaseDoppler
+
+
+
+
+            script(src='https://www.gstatic.com/firebasejs/4.1.2/firebase.js')
+            script.
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyBO8Undvn3MXAVFBhpbh82LXec8IpJlmKE",
+                    authDomain: "fir-doppler.firebaseapp.com",
+                    databaseURL: "https://fir-doppler.firebaseio.com",
+                    projectId: "fir-doppler",
+                    storageBucket: "fir-doppler.appspot.com",
+                    messagingSenderId: "781647236307"
+                };
+                firebase.initializeApp(config);
+
+
+
+            if addedScript
+                script(src=addedScript)
+        if block
+            block
+
+            script(src="main.js")

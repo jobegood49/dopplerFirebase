@@ -1,0 +1,59 @@
+include head
++head()
+    body
+
+        .row
+            .column.small-7
+                table
+                    thead
+                        tr
+                            th(width='200') Name
+                            th(width='150') Age
+                            th(width='150') Email
+                    tbody#usersTable
+                        tr
+                            td Content Goes Here
+                            td This is longer content Donec id elit non mi porta gravida at eget metus.
+                            td Content Goes Here
+
+
+            .column.small-1
+
+            .column.small-4
+                h3 User Details
+                form#userCreate
+                    .row
+                        .small-3.columns
+                            label.text-right.middle(for='middle-label') Name
+                        .small-9.columns
+                            input#nameUser(type='text',name='name' )
+                    .row
+                        .small-3.columns
+                            label.text-right.middle(for='middle-label') Age
+                        .small-9.columns
+                            input#ageUser(type='text',name='age' )
+                    .row
+                        .small-3.columns
+                            label.text-right.middle(for='middle-label') Email
+                        .small-9.columns
+                            input#emailUser(type='text',name='email')
+                    input(type='submit', value='Submit', id='submitButton')
+
+
+
+
+
+
+
+        script(src="main.js")
+
+
+
+
+
+
+
+
+
+
+
