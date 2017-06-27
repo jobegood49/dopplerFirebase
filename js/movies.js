@@ -1,20 +1,40 @@
-window.onload = initialize;
+const urlMovies = "http://localhost:3000/movies";
 
-var refCreateUser;
-var usersTable;
+const request = fetch(urlMovies, {
+    method: "GET"
+});
 
-function initialize() {
+let movies;
 
-    refCreateUser = firebase.database().ref().child("users");
-    usersTable = document.getElementById("usersTable");
-    console.log("hello");
-    displayUsers();
+request
+    .then(function(response){
+        return response.json();
+    })
+    .then(function (json) {
+        movies = json;
+        return movies.then(displayMovies(movies));;
+    })
+
+
+function displayMovies(movies) {
+
+    var line = "";
+    for(var key in movies) {
+        console.log(key);
+        line += "<tr>" +
+            "<td>" + movies[key].title + "</td>" +
+            "<td>" + movies[key].category + "</td>" +
+            "<td>" + movies[key].releaseYear + "</td>" +
+            "</tr>";
+    }
+    moviesTable.innerHTML = line;
 
 }
 
-function displayUsers() {
+/*
+function displayMovies() {
 
-    console.log(refCreateUser);
+
     refCreateUser.on("value", function(snap){
         console.log("xouxx");
         var data = snap.val();
@@ -57,12 +77,7 @@ function displayUsers() {
 
 }
 
-function deleteFromFirebase() {
-    var keyOfUserToDelete = this.getAttribute("keyOfUserToDelete");
-    var refUserToDelete = refCreateUser.child(keyOfUserToDelete);
-    refUserToDelete.remove();
 
 
-}
 
-
+*/

@@ -1,0 +1,20 @@
+include head
+include menu
++head('./js/movies.js')
+
+
+
+    body
+        +menu()
+        h1 Movies
+        .row
+            .column.small-7
+                table
+                    thead
+                        tr
+                            th(width='200') Title
+                            th(width='150') Category
+                            th(width='150') Release Year
+                    tbody#moviesTable
+                        tr
+
